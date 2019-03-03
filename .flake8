@@ -1,0 +1,12 @@
+[flake8]
+exclude = .git, __pycache__, .eggs, build. *.pyc
+max_line_length = 100
+ignore =
+    # E265 block comment should start with '# '
+    E265,
+    # E266 too many leading '#' for block comment
+    E266,
+    # W503 line break before binary operator
+    # E203 whitespace before ':'
+    W503,E203
+doctests = true

@@ -1,0 +1,14 @@
+language: python
+install:
+  - python setup.py sdist bdist_wheel
+script:
+  - python setup.py pytest
+deploy:
+  on:
+    branch: master
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: py-load
+  skip_cleanup: true
+  local_dir: dist
