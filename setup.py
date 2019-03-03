@@ -31,7 +31,7 @@ def git_rev():
         out = _minimal_ext_cmd(['git', 'rev-parse', 'HEAD'])
         GIT_REVISION = out.strip().decode('ascii')
     except OSError:
-        GIT_REVISION = "unknown"
+        GIT_REVISION = 'unknown'
 
     return GIT_REVISION
 
@@ -62,5 +62,15 @@ setup(
     packages=find_packages(),
     install_requires=dependencies,
     setup_requires=['pytest-runner'],
-    tests_require=['pytest']
+    tests_require=['pytest'],
+    classifiers=[
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
+    ]
 )
