@@ -1,4 +1,5 @@
-import argparse
+import yaml
+import io
 
 
 def load_config(path):
@@ -9,5 +10,15 @@ def load_config(path):
     Returns:
         config: A dictionary representing the configuration file
     """
+    with io.open(path, 'r') as stream:
+        try:
+            config = yaml.load(stream)
+        except IOError as ex:
+            print(ex.message)
+            raise ex
+    return config
 
-    raise NotImplementedError()
+
+if __name__ == '__main__':
+    config = load_config('config.yml')
+    print(config)
