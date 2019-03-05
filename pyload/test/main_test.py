@@ -13,11 +13,11 @@ def test_load_config_throws_error():
 
 
 def test_loads_config():
-    config = load_config('config.yml')
+    config = load_config('test.yml')
     assert config is not None
 
 
 def test_config_required_fields():
-    config = load_config('config.yml')
+    config = load_config('test.yml')
     for field in required_config:
         assert field in config
