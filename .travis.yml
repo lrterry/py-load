@@ -3,6 +3,7 @@ python:
   - "3.6"
 install:
   - python setup.py sdist bdist_wheel
+  - pip install ./dist/*.whl
 script:
   - python setup.py pytest
 deploy:

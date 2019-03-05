@@ -42,7 +42,7 @@ def get_full_version():
     git_revision = git_rev()
 
     if not RELEASE:
-        full_version += '.' + git_revision[:7]
+        full_version += '-' + git_revision[:7]
 
     return full_version
 
